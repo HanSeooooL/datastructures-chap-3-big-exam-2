@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4A6B37929E6B88600450417 /* calcul.c in Sources */ = {isa = PBXBuildFile; fileRef = A4A6B37829E6B88600450417 /* calcul.c */; };
 		A4E7871F29E6493B00F27689 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A4E7871E29E6493B00F27689 /* main.c */; };
 		A4E7872729E64B1900F27689 /* mathh.c in Sources */ = {isa = PBXBuildFile; fileRef = A4E7872629E64B1900F27689 /* mathh.c */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A4A6B37729E6B88600450417 /* calcul.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = calcul.h; sourceTree = "<group>"; };
+		A4A6B37829E6B88600450417 /* calcul.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = calcul.c; sourceTree = "<group>"; };
 		A4E7871B29E6493B00F27689 /* datastructures chap 3 big exam 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "datastructures chap 3 big exam 2"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E7871E29E6493B00F27689 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		A4E7872529E64B1900F27689 /* mathh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mathh.h; sourceTree = "<group>"; };
@@ -44,6 +47,8 @@
 		A4E7871229E6493B00F27689 = {
 			isa = PBXGroup;
 			children = (
+				A4A6B37729E6B88600450417 /* calcul.h */,
+				A4A6B37829E6B88600450417 /* calcul.c */,
 				A4E7872529E64B1900F27689 /* mathh.h */,
 				A4E7872629E64B1900F27689 /* mathh.c */,
 				A4E7871D29E6493B00F27689 /* datastructures chap 3 big exam 2 */,
@@ -126,6 +131,7 @@
 			files = (
 				A4E7872729E64B1900F27689 /* mathh.c in Sources */,
 				A4E7871F29E6493B00F27689 /* main.c in Sources */,
+				A4A6B37929E6B88600450417 /* calcul.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +251,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "mathh.h mathh.c datastructures\\ chap\\ 3\\ big\\ exam\\ 2/main.c";
+				DEVELOPMENT_ASSET_PATHS = "datastructures\\ chap\\ 3\\ big\\ exam\\ 2/main.c calcul.h mathh.c mathh.h calcul.c";
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -254,7 +261,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "mathh.h mathh.c datastructures\\ chap\\ 3\\ big\\ exam\\ 2/main.c";
+				DEVELOPMENT_ASSET_PATHS = "datastructures\\ chap\\ 3\\ big\\ exam\\ 2/main.c calcul.h mathh.c mathh.h calcul.c";
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

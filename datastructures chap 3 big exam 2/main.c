@@ -12,29 +12,31 @@
 #include "mathh.h"
 
 Element data[MAX_STACK_DATA];
-int top;
+double datacal[MAX_STACK_DATA];
+int top, topcal;
 
 int main(int argc, const char * argv[]) {
     
     char *expr = NULL;
-    int i, errcode;
+    int errcode;
     expr =(char*)malloc(sizeof(char) * 80);
     
-    for (i = 0; i < 4; i++)
-        inputchar(expr); //키보드로 수식 입력 받기
+    inputchar(expr); //키보드로 수식 입력 받기
     
     printf("\n");
     printf("입력받은 수식: %s", expr); //수식 출력
     
-    for(i = 0; i < 4; i++) {
-        errcode = check_matching(expr);
+    
+    errcode = check_matching(expr);
         
-        if(errcode == 0)
-            printf("정상: %s", expr);
-        else
-            printf("오류: %s (%d에 위배)", expr, errcode);
+    if(errcode == 0) {
+        printf("정상: %s", expr);
+        infix_to_postfix(expr); //후위표기 변환
+        printf("후위표기: %s", expr);
+        printf("\n계산값: %lf", calc_postfix(expr));
     }
-
+    else
+        printf("오류: %s (%d항목에 위배)", expr, errcode);
     return 0;
 }
 
@@ -45,7 +47,7 @@ void error(char msg[])
 }
 
 
-//STACK ADTs
+//Element STACK ADTs
 void init_stack(void) {top = -1;}
 int is_empty(void) {return top == -1;}
 int is_full(void) {return top == MAX_STACK_DATA - 1;}
@@ -69,3 +71,26 @@ void push(int a) {
     data[++top] = a;
 }
 
+//double STACK ADTs
+void init_stackcal(void) {topcal = -1;}
+int is_emptycal(void) {return topcal == -1;}
+int is_fullcal(void) {return topcal == MAX_STACK_DATA - 1;}
+int sizecal(void) {return topcal + 1;}
+
+int popcal(void) {
+    if (is_emptycal())
+        error("스택 공백 에러");
+    return datacal[topcal--];
+}
+
+int peekcal(void) {
+    if (is_emptycal())
+        error("스택 공백 에러");
+    return datacal[topcal];
+}
+
+void pushcal(int a) {
+    if (is_fullcal())
+        error("스택 포화 에러");
+    datacal[++topcal] = a;
+}

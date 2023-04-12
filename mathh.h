@@ -11,9 +11,6 @@ void error(char msg[]);
 
 typedef int Element;
 
-extern Element data[MAX_STACK_DATA];
-extern int top;
-
 //STACK ADTs
 void init_stack(void);
 int is_empty(void);
@@ -23,7 +20,19 @@ int pop(void);
 int peek(void);
 void push(int a);
 
+//double STACK ADTs
+void init_stackcal(void);
+int is_emptycal(void);
+int is_fullcal(void);
+int sizecal(void);
+int popcal(void);
+int peekcal(void);
+void pushcal(int a);
+
+
 int check_matching(char expr[]);
 void inputchar(char str[]);
 void printchar(char *str);
 double calc_postfix(char *expr);
+void infix_to_postfix(char *expr);
+int precedence(char op);
