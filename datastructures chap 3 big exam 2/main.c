@@ -16,27 +16,25 @@ int top;
 
 int main(int argc, const char * argv[]) {
     
-    char **expr = NULL;
+    char *expr = NULL;
     int i, errcode;
-    expr =(char**)malloc(sizeof(char*) * 4);    //이중 포인터를 이용해 2차원 배열 선언
+    expr =(char*)malloc(sizeof(char) * 80);
     
     for (i = 0; i < 4; i++)
-        expr[i] = (char*)malloc(sizeof(char) * 80);
+        inputchar(expr); //키보드로 수식 입력 받기
     
-    for (i = 0; i < 4; i++)
-        inputchar(*(expr + i)); //키보드로 수식 입력 받기
+    printf("\n");
+    printf("입력받은 수식: %s", expr); //수식 출력
     
-    for (i = 0; i < 4; i++)
-        printf("%s", *(expr + i));
-    
-    
-    
-    
-    
-    //for (int i = 0; i < 4; i++) {
-    //    printf("%s", expr[i]);
-    //    printf("\n");
-    //}
+    for(i = 0; i < 4; i++) {
+        errcode = check_matching(expr);
+        
+        if(errcode == 0)
+            printf("정상: %s", expr);
+        else
+            printf("오류: %s (%d에 위배)", expr, errcode);
+    }
+
     return 0;
 }
 

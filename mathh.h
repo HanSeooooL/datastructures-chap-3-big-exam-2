@@ -26,3 +26,4 @@ void push(int a);
 int check_matching(char expr[]);
 void inputchar(char str[]);
 void printchar(char *str);
+double calc_postfix(char *expr);
