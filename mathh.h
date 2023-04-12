@@ -16,8 +16,8 @@ void init_stack(void);
 int is_empty(void);
 int is_full(void);
 int size(void);
-int pop(void);
-int peek(void);
+Element pop(void);
+Element peek(void);
 void push(int a);
 
 //double STACK ADTs
@@ -25,8 +25,8 @@ void init_stackcal(void);
 int is_emptycal(void);
 int is_fullcal(void);
 int sizecal(void);
-int popcal(void);
-int peekcal(void);
+double popcal(void);
+double peekcal(void);
 void pushcal(int a);
 
 
